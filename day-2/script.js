@@ -27,13 +27,16 @@ function partOneB () {
   guessNumber = Number(guess);
 
   // 1. check if the number is equal to the answer
+if (guessNumber === answer) {
+
 
     // 2. if it is, set the message for correct.
-
+messageParagraph.innerHTML = `You guessed the number! It was ${answer}`;
+  } else {
     // 3. if not, set the message for wrong guess.
-
+  messageParagraph.innerHTML = `You did not guess the number.  Try again.`;
 }
-
+}
 // Example
 // guess the number with a hint of higher or lower
 function partTwoA () {
@@ -64,15 +67,20 @@ function partTwoB () {
   guessNumber = Number(guess);
 
   // 1. check if the number is too low.
-
+if (guess < answer) {
     // 2. if it is, set the message for too low.
-
-    // 3. if not, set the message for too high.
-
-    // 4. if not, set the message for correct.
-
+messageParagraph.innerHTML = `Your guess is too low.  Try again.`;
 }
+    // 3. if not, set the message for too high.
+else if (guess > answer){
 
+messageParagraph.innerHTML = `Your guess is too high.  Try again`;
+}
+    // 4. if not, set the message for correct.
+else {
+  messageParagraph.innerHTML = `You guessed the number! It was ${answer}.`;
+}
+}
 // Example
 // Mood checker
 function partThreeA () {
@@ -99,15 +107,19 @@ function partThreeB () {
   let color;
   color = prompt("What color describes your mood today?");
   // 1. check for your first color
-
-    // 2. give the message for this color
-
+  if(color === "red") {
+     // 2. give the message for this color
+    messageParagraph.innerHTML = `Are you feeling stressed?`;
+  }
   // 3. check for the next color
-
+  else if(color === "green") {
     // 4. give the message for the next color
-    
+    messageParagraph.innerHTML = `Are you feeling prosperous today?`;
+  }
   // 5. otherwise, ask for another color
-
+  else {
+    messageParagraph.innerHTML = `Please choose another color.`;
+  }
 }
 
 // Example
@@ -133,6 +145,35 @@ function partFourA () {
 // Try to catch as many as you can.
 function partFourB () {
   alert("Try it!");
-
+  let playerOne, playerTwo;
+  playerOne = prompt("Player One, choose rock, paper, or scissors.");
+  playerTwo = prompt("Player Two, choose rock, paper, or scissors.");
+  if (playerOne === "rock" && playerTwo === "scissors"){
+    messageParagraph.innerHTML = `Player One wins!  ${playerOne} beats ${playerTwo}!`;
+}
+else if (playerOne === "rock" && playerTwo === "paper") {
+  messageParagraph.innerHTML = `Player Two Wins!! ${playerTwo} beats ${playerOne}!`;
+}
+else if (playerOne === "rock" && playerTwo === "rock") {
+  messageParagraph.innerHTML = `It's a tie!!!`;
+}
+else if (playerOne === "scissors" && playerTwo === "rock"){
+  messageParagraph.innerHTML = `Player Two wins!  ${playerTwo} beats ${playerOne}!`;
+}
+else if (playerOne === "scissors" && playerTwo === "paper") {
+messageParagraph.innerHTML = `Player One Wins!! ${playerOne} beats ${playerTwo}!`;
+}
+else if (playerOne === "scissors" && playerTwo === "scissors") {
+messageParagraph.innerHTML = `It's a tie!!!`;
+}
+else if (playerOne === "paper" && playerTwo === "rock"){
+  messageParagraph.innerHTML = `Player One wins!  ${playerOne} beats ${playerTwo}!`;
+}
+else if (playerOne === "paper" && playerTwo === "scissors") {
+messageParagraph.innerHTML = `Player Two Wins!! ${playerTwo} beats ${playerOne}!`;
+}
+else if (playerOne === "paper" && playerTwo === "paper") {
+messageParagraph.innerHTML = `It's a tie!!!`;
+}
 }
 
