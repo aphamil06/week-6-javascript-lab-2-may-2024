@@ -17,9 +17,11 @@ function partOneA () {
 function partOneB () {
   alert("Try it!");
   // 1. Create a for loop.
-
+let highNumber = 6;
     // 2. give the user and alert with the current number.
-
+for (let i = 0; i < highNumber; i++) {
+  alert(`the number is ${i}`);
+  }
 }
 
 // Example
@@ -47,13 +49,15 @@ function partTwoB () {
   messageParagraph.innerHTML = "Flavors";
 
   // 1. Create an array of 5 flavors
-
+let flavors = ["chocolate", "vanilla", "strawberry", "cherry", "pineapple"];
   // 2. Find the length of the array
-
+let highNumber = flavors.length;
   // 3. Create a for loop.
+for (let i = 0; i < highNumber; i++) {
 
     // 4. give the user and alert with the current friend.
 
+alert(`the flavor is ${flavors[i]}`)  }
 }
 
 // Example
@@ -79,12 +83,14 @@ function partThreeB () {
 
   alert("Try it!");
   // 1. create an array of 5 flavors
-
+let flavors = ["Chocolate", "Vanilla", "Strawberry", "Cherry", "Pineapple"];
   // 2. find the length of the array
- 
+ let highNumber = flavors.length;
   // 3. create a for loop
-
+for (let i = 0; i < highNumber; i++) {
     // 4. write the friend to the innerHTML of the list
+    messageList.innerHTML += `<li>${flavors[i]}<li>`;
+  }
 }
 
 // Example
@@ -123,9 +129,9 @@ function partFourB () {
   let newFlavor, highNumber;
 
   // 1. prompt for a flavor
-
+newFlavor = prompt("Add a flavor to the list.");
   // 2. add the flavor to the array with push()
-
+flavors.push(newFlavor);
   // 3. reset the list in the innerHTML
   messageList.innerHTML = "";
   // 4. set the message to "Flavors"
@@ -135,6 +141,8 @@ function partFourB () {
   highNumber = flavors.length;
 
   // 6. write all the flavors back to the HTML list from the array, updated with our new flavor.
-
+for (let i = 0; i < highNumber; i++) {
+  messageList.innerHTML += `<li>${flavors[i]}`;
+}
 }
 
